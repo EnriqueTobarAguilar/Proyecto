@@ -16,7 +16,7 @@ A continuación encontrara el proceso de cómo se desarrolló el código de Pyth
 Para iniciar podemos importar el módulo Random que funciona como generador pseudoaleatorios para varias distribuciones en la secuencia eligiendo de manera aleatoria los datos.
 
 
-Después se dan condiciones con for, while, if definiendo todos los parámetros para que al ejecutar el programa este escoja una de las universidades para así ingresar palabra a palabra hasta completar la palabra.
+Después se dan condiciones con for, while, if definiendo todos los parámetros para que al ejecutar el programa este escoja una de las universidades para así ingresar palabra a palabra hasta completar la palabra. El codigo break se usa para cerrar el bucle generalmente despues de un if.
 
 
 
@@ -24,22 +24,43 @@ Con esto se logra culminar este proyecto que para mí como ingeniero me genera e
 
 #JUEGO de Entretenimiento comunmente llamado ahorcado
 import random
+
 def palabra()->str:
+
   palabras=["universidad", "andes", "rosario","pedagogica","javeriana","santo tomas","andina","catolica","sabana", "militar","santander","antioquia","nacional","bosque"]
+  
   numero=random.randint(0, len(palabras)-1)
+  
+  
   return palabras[numero]
+  
 a=palabra()
+
 b=[]
+
 for i in range(0,len(a)):
+
   b.append("_")
+  
 print(a)
+
 while True:
+
   letra=str(input("Digite letra: "))
+  
   for x in range(0,len(a)):
+  
     if(a[x]==letra):
+    
       b[x]=letra  
+      
   print("".join(b))  
+  
   x="".join(b)
+  
   if(x==a):
+  
     print("Ganaste(●'◡'●)")
+    
     break
+    
